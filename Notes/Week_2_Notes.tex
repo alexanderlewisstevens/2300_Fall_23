@@ -457,40 +457,6 @@ Supposing that $A$ is false (person 1 is lying), $A\land (\lnot B)$ must be fals
 
 \end{proof}
 
-Alternative
-\begin{proof} \ \\
-I will interpret "I don't lie, but she does!" as equivalent to the statement "I don't lie \textbf{and} she does!"
-
-$A:=\text{person 1 tells the truth}$
-
-$B:=\text{person 2 tells the truth}$
-
-Then person one says, $A\land (\lnot B)$
-and person two says $B\land (\lnot A)$
-
-
-So we are looking for a model that satisfies $A\iff(A \land (\lnot B))$ AND the model should also satisfy $B\iff B\land (\lnot A)$.
-
-AKA(we want a model that satisfies both)
-
-A model that that satisfies two propositions satisfies their conjunction 
-\newline
-
-\[(A\iff A \land (\lnot B)) \land (B\iff B\land (\lnot A))\]
-
-\begin{align}
-(F\iff F \land (\lnot F)) \land (F\iff F\land (\lnot F))\equiv & (F\iff F \land (T)) \land  (F\iff F\land (T) \\
-\equiv & (F\iff F ) \land  (F\iff F)\\
-\equiv & (T ) \land  (T)\\
-\equiv & T
-\end{align}
-
-
-
-
-\end{proof}
-
-
 \end{exmp}
 
 \subsection{Propositional Equivalences}
