@@ -812,7 +812,7 @@ $p,p\to q \vdash q$
 \end{defn}
 
 \begin{defn}[Modus tollens]
-$\lnot q,p\to q \vdash \not p$
+$\lnot q,p\to q \vdash \lnot p$
 \end{defn}
 \begin{defn}[Hypothetical syllogism]
 $(p \to q) , (q \to r) \vdash (p \to r)$
@@ -834,8 +834,8 @@ $p \lor q, \lnot p \lor r  \vdash q \lor r$
 \end{defn}
 \newpage 
 \begin{rem}
-Some general rules for constructive proofs:
-
+We can always think of our truth tables (even if we aren't using them explicitly!)\\
+Suppose we want to show the following:\\
 If $a\vdash b$ and $b \vdash c$, then $a\vdash c$. \\
 This should remind you of the hypothetical syllogism\\
 We can say this as "If you can prove the conclusion $b$ from the premise $a$, and you can prove the conclusion $c$ from the premise $b$, then you can prove the conclusion $c$ from the premise $a$."
@@ -965,9 +965,28 @@ $\exists x P(x) \vdash \text{for some } c, P(c)$
 $ P(c) \text{ for some c } \vdash \exists x P(x)$
 \end{defn}
 \begin{exmp}
-show
+Show,
 $\exists x(C(x)\land \lnot B(x)), \forall x(C(x) \to P(x)) \vdash \exists x(P(x)\land \lnot B(x))$
+\\
+(I will do this informally for the sake of brevity, but we should be able to construct the formal argument form also).
+\begin{proof}
+
+\end{proof}
+By existential instantiation,$\exists x(C(x)\land \lnot B(x))\vdash$ for some $d$ $(C(d)\land \lnot B(d))$. \\
+By simplification, from $(C(d)\land \lnot B(d))$ we have $ C(d)$.\\
+By universal modus ponens,from 
+$\forall x(C(x) \to P(x))$ and $C(d)$ we know $P(d)$.\\
+Using, simplification of $C(d)\land \lnot B(d)$ we have  $\lnot B(d)$. 
+\\
+Conjunction of $\lnot B(d)$, $P(d)$ yields, $P(d) \land \lnot B(d)$.
+\\ Thus, through Existential Generalization, we see $\exists x(P(x)\land \lnot B(x))$
+
+
+
+
+
 \end{exmp}
+
 
 \begin{exmp}
 Determine the truth value of the statement $\exists x \forall y (x\leq y^2)$
@@ -981,7 +1000,7 @@ We will prove that this statement is false by proving the truth of it's negation
 We begin by rewriting the negation:
 \begin{align}
 \lnot(\exists x \forall y (x\leq y^2))&\equiv \forall x \lnot \forall y (x\leq y^2))\\
-&\equiv \forall x  \exists y \lnot (y (x\leq y^2)))\\
+&\equiv \forall x  \exists y \lnot  (x\leq y^2))\\
 &\equiv \forall x  \exists y (x > y^2)).
 \end{align}
 To show the truth of this equivalent statement we will show that for all x in the domain, there exists a y in the domain such that $x>y^2$.
@@ -989,26 +1008,25 @@ To show the truth of this equivalent statement we will show that for all x in th
 Choose an arbitrary $c$ in the positive real numbers. Define $d:=\sqrt{c/2}$. Notice that $d$ is a positive real number.
 \\
 It is clear that for arbitrary $c$, for some $d$, $c>d^2$.\\
-By the inference rule of Existential Generalization, 
-for arbitrary $c\in \mathbb{R}$, for some $d\in \mathbb{R}$,$(c > d^2) $.\\
+ for arbitrary $c\in \mathbb{R}$, for some $d\in \mathbb{R}$,$(c > d^2) $.\\
 By the inference rule of Existential Generalization,
-for arbitrary $c\in \mathbb{R}$, $\exists y \in \mathbb{R}$| $(c > y^2) $.\\
+for arbitrary $c\in \mathbb{R}$, $\exists y \in \mathbb{R}$ such that $(c > y^2) $.\\
 By the inference rule of Universal Generalization,
-$\forall x, \exists y (x > y^2)$.
+$\forall x, \exists y (x > y^2)$.\\
 Therefore, $\lnot(\exists x \forall y (x\leq y^2))$.
 \end{proof}
-
+\newpage 
 \item b) the integers.
 \vspace{3cm}
 \begin{proof}
 We begin by rewriting the proposition,
 \begin{align}
 \exists x \forall y (x\leq y^2))\equiv& \text{for some } c,\forall y (c\leq y^2))\text{ Universal Instantiation}\\
-\equiv& \text{for some } c,\forall y (x\leq y^2))\text{ Universal Instantiation}.
+\equiv& \text{for some } c,\text{for all d,} (c\leq d^2))\text{ Universal Instantiation}.
 \end{align}
-Let $c=1$ and $d\in \mathbb{Z}$. Then $\abs{d}\geq 1$ and $d^2\geq 1$.\\
-Therefore, for $c=1$,$d\in \mathbb{Z}$, $ (c\leq d^2))$.\\
-By Universal Generalization, $c=1$,$\forall y$, $ (c\leq y^2))$.\\
+Let $c=0$ and $d\in \mathbb{Z}$. Then $\abs{d}\geq 0$ and $d^2\geq 0$.\\
+Therefore, for $c=0$,$\forall d\in \mathbb{Z}$, $ (c\leq d^2))$.\\
+By Universal Generalization, $c=0$,$\forall y$, $ (c\leq y^2))$.\\
 By Existential Generalization, $\exists x$$\forall y$, $ (x\leq y^2))$.\\
 
 \end{proof}
@@ -1018,9 +1036,25 @@ By Existential Generalization, $\exists x$$\forall y$, $ (x\leq y^2))$.\\
 \newline
 \end{enumerate}
 \end{exmp}
-\newpage
+\vspace{3cm}
+
+\begin{exmp}[Importance of Formalizing arguments]
+(Because Tony wanted a paradox and I feel bad for making him type in .tex, here is Curry's Paradox)\\
+
+Analyze the truth of the following sentence.\\
+
+"If this proposition is true, then $Q$"\\
+\begin{proof}
+$P:=$"If this proposition is true, then $Q$"\\
+
+\end{proof}
 
 
+
+
+
+
+\end{exmp}
 
 % \begin{exmp}
 % Show that $(p \land q) \to (p \lor q)$ is a tautology:

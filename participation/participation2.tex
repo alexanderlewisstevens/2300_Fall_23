@@ -183,7 +183,7 @@
 \lhead{COMP 2300}
 %It is recommended to add your name
 %%%%%%%%%%%%
-\chead{Homework 1 Student \#1}
+\chead{Participation \#1}
 \rhead{Fall 2023}
 \lfoot{}
 \cfoot{}
@@ -204,195 +204,17 @@
 %######################################
 %HOMEWORK START
 
+Please write your name somewhere up here.
+\begin{exer}
+Show that $(p \land (\lnot p \lor \lnot q))$ is a contradiction (logically equivalent to False)
+\vspace{10cm}
+\end{exer}
 
-\begin{enumerate}
-\item (30 points)
-  Construct truth tables for the following compound propositions.
-  \begin{enumerate}
-    \item $\lnot p \to q$
-  \item $\bigl((p \to r) \land r \bigr) \lor \lnot (\lnot p \lor r)$
-  \item $\bigl((p \leftrightarrow r) \lxor q\bigr) \land (\lnot p \lor q \lor \lnot r)$
-  \item $\lnot\Bigl( \bigl((\lnot p \lor r \lor q) \land (p \to r)\bigr) \lxor r\Bigr)$
-  \end{enumerate}
-  Are any of the propositions equivalent? If so, which ones and why?
+\begin{exer}
+Write $(p \lor q ) \land (\lnot p \lor \lnot r)$ in disjunctive normal form (as a disjunction of conjunctions).
 
- 
-(Solution) %The code for the tables is provided here. Please enter the correct truth Values into the table. Feel free to change the tables.
-\begin{enumerate}
-\item $\lnot p \to q$
-
-\begin{center}
-\begin{tabular}{ | c | c | c |} 
-  \hline
- $p$ $q$ & $ \lnot p$ & $\lnot p \to r$ \\
- \hline
-  T T & ? & ? \\ 
-  T F & ? & ? \\ 
-  F T & ? & ? \\
-  F F & ? & ? \\
-  \hline
-\end{tabular}
-\end{center}
-
-
-
-\item Truth Table for $\bigl((p \to r) \land r \bigr) \lor \lnot (\lnot p \lor r)$
-%
-\begin{center}
-\begin{tabular}{ | c | c | c | c | c | c | c |} 
-  \hline
- $p$ $q$ $r$ & $p \to r$ & $(p \to r) \land r$ & $\lnot p$ & $\lnot p \lor r$ & $\lnot (\lnot p \lor r)$ & $\bigl((p \to r) \land r \bigr) \lor \lnot (\lnot p \lor r)$\\
-  \hline
-  T T T & ? & ? & ? & ? & ? & ?\\ 
-  T T F & ? & ? & ? & ? & ? & ?\\ 
-  T F T & ? & ? & ? & ? & ? & ?\\
-  T F F & ? & ? & ? & ? & ? & ?\\
-  F T T & ? & ? & ? & ? & ? & ?\\
-  F T F & ? & ? & ? & ? & ? & ?\\
-  F F T & ? & ? & ? & ? & ? & ?\\
-  F F F & ? & ? & ? & ? & ? & ?\\
-  \hline
-\end{tabular}
-\end{center}
-
-\item Truth Table for $\bigl((p \leftrightarrow r) \lxor q\bigr) \land (\lnot p \lor q \lor \lnot r)$
-
-\begin{center}
-\begin{tabular}{ | c | c | c | c | c | c | c |} 
-  \hline
- $p$ $q$ $r$ & $p \leftrightarrow r$ & $(p \leftrightarrow r) \lxor q$ & $\lnot p$ & $\lnot r$ & $\lnot p \lor q \lor \lnot r$ & $\bigl((p \leftrightarrow r) \lxor q\bigr) \land (\lnot p \lor q \lor \lnot r)$\\
-  \hline
-  T T T & ? & ? & ? & ? & ? & ?\\ 
-  T T F & ? & ? & ? & ? & ? & ?\\ 
-  T F T & ? & ? & ? & ? & ? & ?\\
-  T F F & ? & ? & ? & ? & ? & ?\\
-  F T T & ? & ? & ? & ? & ? & ?\\
-  F T F & ? & ? & ? & ? & ? & ?\\
-  F F T & ? & ? & ? & ? & ? & ?\\
-  F F F & ? & ? & ? & ? & ? & ?\\
-  \hline
-\end{tabular}
-\end{center}
-
-\item Truth Table for $\lnot\Bigl( \bigl((\lnot p \lor r \lor q) \land (p \to r)\bigr) \lxor r\Bigr)$
-
-\begin{center}
-\begin{tabular}{ | c | c | c | c | m{2.1cm} | m{2.6cm} | m{2.8cm} |} 
-  \hline
- $p$ $q$ $r$ & $\lnot p$ & $\lnot p \lor r \lor q$ & $p \to r$ & $(\lnot p \lor r \lor q) \land (p \to r)$ & $((\lnot p \lor r \lor q) \land (p \to r)\bigr) \lxor r$ & $\lnot\Bigl( \bigl((\lnot p \lor r \lor q) \land (p \to r)\bigr) \lxor r\Bigr)$\\
-  \hline
-  T T T & ? & ? & ? & ? & ? & ?\\ 
-  T T F & ? & ? & ? & ? & ? & ?\\ 
-  T F T & ? & ? & ? & ? & ? & ?\\
-  T F F & ? & ? & ? & ? & ? & ?\\
-  F T T & ? & ? & ? & ? & ? & ?\\
-  F T F & ? & ? & ? & ? & ? & ?\\
-  F F T & ? & ? & ? & ? & ? & ?\\
-  F F F & ? & ? & ? & ? & ? & ?\\
-  \hline
-\end{tabular}
-\end{center}
-  \end{enumerate}
-
-(Solution): %Don't forget to state if there are any equivalent propositions
-
-\item (5 + 5 points)
-In the future, all robots are either knights who always tell the truth or knaves who always lie. You are a time traveler and you arrive in the future. You come across two robots named %Alice and Bob.
-Leela and Fry. Leela says: 'If Fry is a knave, then I am a knave.' What are Leela and Fry?
-
-  Ensure that you fully explain \textbf{every} step of your reasoning. You are allowed to write the steps in English. Make sure to consider all cases. 
-  You can get 5 bonus points for translating this problem into Boolean algebra and then create a truth table (please note that you cannot exceed 100 points for this homework).
-  
-(Solution)
-%Your Solution goes here
-
-$F:=\text{Fry is a knight}$
-\newline
-$L:=\text{Leela is a knight}$
-\newline
-
-We need to ensure that the truth value of the statement that Leela says is the same as the truth of the proposition "Leela is a knight".
-
-Leela says (as a compound propsition): $(\lnot F)\to(\lnot L)$
-
-
-\begin{center}
-\begin{tabular}{ | c | c | c | c | } 
-  \hline
- $F$ $L$ & $\lnot F$ & $\lnot L$ &(\lnot F)\to(\lnot L) \\
-  \hline
-  T T & ? & ? & ?  \\ 
-  F T & ? & ? & ?  \\
-  T F & ? & ? & ?  \\ 
-  F F & T & T & T  \\ 
-  \hline
-\end{tabular}
-\end{center}
-
-
-\item (20 points)
-  An explorer lands on a strange island with two towns.
-  All inhabitants of Truth always tell the truth, and all inhabitants of Lies always lie.
-  The explorer asks the first islander, Alice, which town she comes from, and she gives an answer that the explorer cannot understand.
-  The second islander, Bob, says, ``Alice said she is from Lies.''
-  The third islander, Charlie, says to Bob, ``You are a liar!''
-  From which town is Charlie?
-
-  Ensure that you fully explain every step of your reasoning.
-
-(Solution)
-%Your Solution goes here
-
-
-
-\item (20 points)
-  Determine whether the following compound propositions are satisfiable. If it is satisfiable, provide an assignment; otherwise, show why it is not satisfiable.
-  \begin{enumerate}
-  \item $(p \lor q \lor r) \land (\lnot p \lor q \lor s) \land (p \lor \lnot q \lor \lnot s) \land (\lnot q \lor \lnot r \lor s)$
-
-\begin{center}
-\begin{tabular}{ | c | c | c | c | } 
-  \hline
- p, q, r, s \\
-  \hline
-  ? ? ? ?\\ 
-  
-  \hline
-\end{tabular}
-\end{center}
-  
-  \item $(\lnot p \lor \lnot q \lor \lnot s) \land (p \lor q \lor r \lor s) \land (p \lor q \lor s) \land (\lnot p \lor q \lor r)$
-  
-  
-
-  \end{enumerate}
-
-\item (25 points)
-  Translate the following arguments into logical statements using predicates, logical connectives, and quantifiers as appropriate.
-  %use the math mode starting and ending with $$
-  %Check the supporting file of LaTeX commands on Canvas (or search online)
-  %$\forall%
-  %$\exists$
-  %$\land$ for AND
-  %$\lor$ for OR
-  %$\neg$ for NOT or negation
-  
-
-  \begin{enumerate}
-  \item
-    All cats understand French.\\
-    Some chickens are cats.\\
-    Some chickens understand French.
-
-  \item
-    All wise men walk on their feet.\\
-    All unwise men walk on their hands.\\
-    No man walks on both.
-
-    
-  \end{enumerate}
-
-\end{enumerate}
+\end{exer}
+\vspace{5cm}
 \end{document}
 
 
